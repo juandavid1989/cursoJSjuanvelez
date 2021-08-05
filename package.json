@@ -2,9 +2,9 @@
   "name": "node-js-geoposicionamientos",
   "version": "1.0.0",
   "description": "Sample Node.js app using Server Express",
-  "main": "server.js",
+  "main": "code.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node code.js"
   },
   "dependencies": {
     "express": "^4.17.1"

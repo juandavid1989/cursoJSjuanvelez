@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="no-js ui-mobile-rendering" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <title>Taller No. 3 Geo-Map</title>
+    <link rel="stylesheet" crossorigin="" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="Shortcut Icon" href="images/armada.ico" />
+    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1" />
+</head>
+
+<body>
+    <header>
+        <img class="header-img" src="images/banner.png" alt="JINA" />
+        <div class="MainTitle">
+            <h1 id="Title">Taller No.3 Mapa de Localidades</h1>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Talller final</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Taller 1 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="tallerdos">Taller 2 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="tallertres">Taller 3 <span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <br><br>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-0 MyDiv">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div id="LocalButton" class="col-md-2 col-md-offset-0 MyDiv">
+        </div>
+        <div class="col-md-9 col-md-offset-0 MyDiv">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" crossorigin=""></script>
+    <script src="js/maps.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller3</title>
+    <script src="https://cdn.plot.ly/plotly-2.2.1.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Talller final</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Taller 1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="tallerdos">Taller 2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="tallertres">Taller 3 <span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>
+
+<body>
+    <div id="myDiv">
+    </div>
+
+</body>
+
+
+
+<script>
+    d3.csv("https://www.datos.gov.co/api/views/nav4-rbv7/rows.csv?accessType=DOWNLOAD", function(err, rows) {
+
+        function unpack(rows, key) {
+            return rows.map(function(row) {
+                return row[key];
+            });
+        }
+
+        var headerNames = d3.keys(rows[0]);
+        var headerValues = [];
+        var cellValues = [];
+        for (i = 0; i < headerNames.length; i++) {
+            headerValue = [headerNames[i]];
+            headerValues[i] = headerValue;
+            cellValue = unpack(rows, headerNames[i]);
+            cellValues[i] = cellValue;
+        }
+
+        // clean date
+        for (i = 0; i < cellValues[1].length; i++) {
+            var dateValue = cellValues[1][i].split(' ')[0] //// caracter de separacion
+            cellValues[1][i] = dateValue
+        }
+
+
+        var data = [{
+
+            type: 'table',
+
+            header: {
+                values: headerValues,
+                align: "center",
+                line: {
+                    width: 1,
+                    color: 'rgb(70,130,180)'
+                },
+                fill: {
+                    color: ['rgb(25,25,112)']
+                },
+                font: {
+                    family: "Arial",
+                    size: 8,
+                    color: "white"
+                }
+            },
+
+            cells: {
+
+                values: cellValues,
+                align: ["center", "center"],
+                line: {
+                    color: "black",
+                    width: 1
+                },
+                fill: {
+                    color: ['rgba(30,144,255, 0.65)', 'rgb(135,206,235)', 'rgba(135,206,250, 0.65)']
+                },
+                font: {
+                    family: "Arial",
+                    size: 9,
+                    color: ["black"]
+                }
+            }
+
+        }]
+
+        var layout = {
+            title: "Oficinas de Atención al Ciudadano Unidades Armada Nacional"
+        }
+        Plotly.newPlot('myDiv', data, layout);
+
+
+    });
+</script>
+
+</html>

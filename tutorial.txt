@@ -1,0 +1,25 @@
+1. En la carpeta del proyecto click derecho y git hub
+2. git init //inicia el proyecto en la carpeta raiz
+3. git status //para ver que carpetas están incluidas
+4. git add // con el nombre del archivo o con punto para todo
+5. git diff para ver la diferencia entre un archivo especifico
+6.  git checkout -- mapa.html retrocede un cambio hecho al archivo
+7. git status
+8. git config --global user.email "juandavid2789@gmail.com" // configura una variable del correo
+9. git commit -m "Primer commit curso JS -- juan"
+10. crear repositorio en git
+11.  git remote add origin https://github.com/juandavid1989/claseJS.git //copiar este código de la creación
+12. git push -u origin master //cargarlo a la web
+
+
+#git init
+#git status
+#git add index.html
+#git add .
+#git diff mapa.html
+#git checkout -- mapa.html
+#git config --global user.email "luis.hernandez@armada.mil.co"
+#git config --global user.name "Luis Hernandez Salazar"
+#git commit -m "Primer commit curso JS"
+#git remote add origin https://github.com/luchoarc/curso_js_arc.git
+#git push -u origin master
